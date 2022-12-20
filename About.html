@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="shortcut icon" type="image/x-icon" href="er.ico" />
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>About RgbCasino</title>
+</head>
+<body>
+<style type="text/css">
+	html{
+background-color: rgb(22, 28, 33);
+background-image: linear-gradient(45deg, transparent 20%, black 25%, transparent 25%),
+linear-gradient(-45deg, transparent 20%, black 25%, transparent 25%),
+linear-gradient(-45deg, transparent 75%, black 80%, transparent 0),
+radial-gradient(gray 2px, transparent 0);
+background-size: 30px 30px, 30px 30px;
+	}
+	#center{
+		position:absolute;
+		left: 35%;
+		top: 20%;
+	}
+#rt{
+	width: 800px ;
+	left: 27%;
+		top: 25%;
+		position: absolute;
+}
+
+
+</style>
+<div id="center"><i style="font-family: Calibri; font-size: 200%; color:rgb(52, 213, 235);"id="a3"></i></div>
+
+<div id="rt"><i style="font-family: Calibri; font-size: 200%; color:rgb(52, 213, 235);" id="a4"></i>
+</div>
+<script type="text/javascript">
+var ghj = 0;
+var i = 0;
+var txt = 'You want to know more about us?'; 
+var txtt = "We are a starting casino which tries to make cash";
+var speed = 50; 
+if (speed=50) {
+   Writer(this,Writer)
+}
+
+function Writer() {
+  if (i < txt.length) {
+    document.getElementById("a3").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(Writer, speed);
+  }
+  if (i>=txt.length) {
+  	Writerr(this,Writerr)
+  }
+};
+
+function Writerr(){
+	if (ghj < txtt.length) {
+    document.getElementById("a4").innerHTML += txtt.charAt(ghj);
+    ghj++;
+    setTimeout(Writerr, speed);
+
+  }
+}
+
+</script>
+</body>
+</html>

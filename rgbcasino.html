@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+<head >
+	<link rel="icon" href="er.ico">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Rgb Casino</title>
+</head>
+<body>
+	<link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<div class='roulette-wrapper'>
+  <div class='selector'></div>
+  <div class='wheel'></div>
+</div>
+<!--panel-chat-->
+<div id="chat">
+	<object type="text/html" data="chat.html" width="100%" height="100%" style="overflow:auto;border:5px ridge blue"></object>
+</div>
+<!--bet-->
+<link rel="stylesheet" type="text/css" href="button.css">
+<div class="beting" type="box">
+	<button class="bet" id="bet1" onclick="betr()">Bet Red X2</button>
+	<button class="bet" id="bet2" onclick="betrg()">Bet RGB!!! X14</button>
+	<button class="bet" id="bet3" onclick="betb()">Bet Blue X2</button>
+</div>
+<!--timer-->
+<div id="timer"><p id="tim"></p></div>
+<!--underpanel-->
+<div id="upanel">
+	<a id="gh1" class="ling" href="About.html">About Us</a>
+    <a id="gh2" class="ling" href="">Contact Us</a>
+    <a id="gh3" class="ling" href="">Help</a>
+    <p id="balance">Balance:100$</p>
+</div>
+<!--box-->
+<div id="box"></div>
+<style type="text/css">
+	html{
+		position: fixed;
+		width: 1920px, auto;
+		height: 1080px, auto;
+		scale: auto;
+	}
+	#box{
+		cursor: pointers;
+		position: fixed;
+		top: 2%;
+		left: 48%;
+		height: 78px;
+		width: 1px;
+		border: 2px ridge white;
+		border-radius: 7%;
+
+
+		
+	}
+	#bet1{
+		left: 10%;
+	}
+	#bet2{
+		left: 30%;
+	}
+	#bet3{
+		left: 52%;
+	}
+	.bet{
+		left: 35%;
+		top: 30%;
+		position: fixed;
+
+	}
+
+	#tim{
+		justify-content: center;
+		font-size: 30px;
+		top: 23%;
+		color: white;
+		left: 300%;
+		position: absolute;
+	}
+	#balance{
+		font-size: 24px;
+		position: absolute;
+		color: orange;
+		top: -20%;
+		background-color:rgb(55, 120, 212) ;
+		background-image: linear-gradient(45deg, transparent 20%, black 25%, transparent 25%),
+linear-gradient(-45deg, transparent 20%, black 25%, transparent 25%),
+linear-gradient(-45deg, transparent 75%, black 80%, transparent 0),
+radial-gradient(gray 2px, transparent 0);
+background-size: 30px 30px, 30px 30px;
+
+	}
+	#gh1{
+        top: 25%;
+        left: 25%;
+	}
+	#gh2{
+        top: 25%;
+        left: 30%;
+	}
+	#gh3{
+        top: 25%;
+        left: 35%;
+	}
+	.ling{
+		background-image: linear-gradient(45deg, transparent 20%, black 25%, transparent 25%),
+linear-gradient(-45deg, transparent 20%, black 25%, transparent 25%),
+linear-gradient(-45deg, transparent 75%, black 80%, transparent 0),
+radial-gradient(gray 2px, transparent 0);
+background-size: 30px 30px, 30px 30px;
+		font-weight: bold;
+		color: rgb(207, 17, 74);
+        text-decoration: none;
+        text-transform: uppercase;
+
+		border-radius: 7%;
+        position:relative;
+		text-decoration-color: rgb(0, 0, 0);
+		font-size: 24px;
+		font-family: "Calibri";
+		border-radius: 10%;
+		background-color: rgb(225, 227, 225);
+	}
+	#upanel{
+		shape-rendering: auto;
+		border:2px ridge blue;
+		background-image: url(gt.jpg);
+		background-size: 100%;
+		top: 89%;
+		width: 890px;
+		height: 65px;
+		position: fixed;
+	}
+	#timer{
+       
+		top: 0%;
+		position: absolute;
+		height: 200px;
+		width: 200px;
+		
+	}
+	#knapp{
+		position: absolute;
+		left: 43%;
+	}
+	input.chat{
+		left: 0%;
+		position: absolute;
+		top: 100%;
+	}
+	#chat{
+        
+		height: 500px;
+		width: 400px;
+		background-color: rgb(24, 43, 64);
+		left: 70% ;
+		position: fixed;
+		justify-content: right;
+	}
+	body{
+  font-family: 'Titillium Web', sans-serif;
+  background:#191B28;
+  background-image: linear-gradient(45deg, transparent 20%, black 25%, transparent 25%),
+linear-gradient(-45deg, transparent 20%, black 25%, transparent 25%),
+linear-gradient(-45deg, transparent 75%, black 80%, transparent 0),
+radial-gradient(gray 2px, transparent 0);
+background-size: 30px 30px, 30px 30px;
+
+}
+
+.roulette-wrapper{
+  position:relative;
+  display:flex;
+  justify-content:center;
+  width:100%;
+  margin:0 auto;
+  overflow:hidden;
+}
+
+.roulette-wrapper .selector{
+  width:3px;
+  background:grey;
+  left:50%;
+  height:100%;
+  transform:translate(-50%,0%);
+  position:absolute;
+  z-index:2;
+}
+
+.roulette-wrapper .wheel{
+  display:flex;
+}
+
+.roulette-wrapper .wheel .row{
+  display:flex;
+}
+
+.roulette-wrapper .wheel .row .card{
+  height:75px;
+  width:75px;
+  margin:3px;
+  border-radius:8px;
+  border-bottom:3px solid rgba(0,0,0,0.2);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:white;
+  font-size:1.5em;
+}
+
+.card.red{
+  background:#F95146;
+}
+
+.card.black{
+  background:#3443eb;
+}
+
+.card.green{
+background-color: #eb3734;
+animation-name: flow;
+animation: flow 20s linear infinite;
+}
+
+*{
+  left: 0%;
+  box-sizing:border-box;
+
+}
+
+@keyframes flow{
+0% {background-color: red}
+10%{background-color: green}
+20%{background-color: blue;}
+30% {background-color: red}
+40%{background-color: green}
+50%{background-color: blue;}
+60%{background-color: green}
+70%{background-color: blue;}
+80% {background-color: red}
+90%{background-color: green}
+100%{background-color: blue;}
+
+}
+.spin{
+	position: absolute;
+}
+
+</style>
+<script type="text/javascript">
+	$(document).ready(function() {
+	//setup multiple rows of colours, can also add and remove while spinning but overall this is easier.
+	initWheel();
+
+ 	
+});
+
+function rot(){
+	    var erv = Math.floor(Math.random()*2)
+ 		var r=Math.floor(Math.random() * 13)*erv; ;
+		var outcome = r
+    spinWheel(outcome);
+  };
+function initWheel(){
+	var $wheel = $('.roulette-wrapper .wheel'),
+  		row = "";
+      
+  row += "<div class='row'>";
+  row += "  <div class='card red'>$<\/div>";
+  row += "  <div class='card black'>£<\/div>";
+  row += "  <div class='card red'>$<\/div>";
+  row += "  <div class='card black'>£<\/div>";
+  row += "  <div class='card red'>$<\/div>";
+  row += "  <div class='card black'>£<\/div>";
+  row += "  <div class='card red'>$<\/div>";
+  row += "  <div class='card green'>RGB!!!<\/div>";
+  row += "  <div class='card black'>£<\/div>";
+  row += "  <div class='card red'>$<\/div>";
+  row += "  <div class='card black'>£<\/div>";
+  row += "  <div class='card red'>$<\/div>";
+  row += "  <div class='card black'>£<\/div>";
+  row += "  <div class='card red'>$<\/div>";
+  row += "  <div class='card black'>£<\/div>";
+  row += "<\/div>";
+  
+	for(var x = 0; x < 50; x++){
+  	$wheel.append(row);
+  }
+}
+
+function spinWheel(roll){
+  var $wheel = $('.roulette-wrapper .wheel'),
+  	order = [0, 11, 5, 10, 6, 9, 7, 8, 1, 14, 2, 13, 3, 12, 4],
+      position = order.indexOf(roll);
+            if(roll=11,4,2,6;){
+            	betr(this,betr)
+            };
+  //determine position where to land
+  var rows = 12,
+  		card = 75 + 3 * 2,
+      landingPosition = (rows * 15 * card) + (position * card);
+  var randomize = Math.floor(Math.random() * 75) ;
+    
+  landingPosition = landingPosition + randomize;
+  var object = {
+		x: Math.floor(Math.random() * 50) / 100,
+    y: Math.floor(Math.random() * 20) / 100
+	};
+  
+  $wheel.css({
+		'transition-timing-function':'cubic-bezier(0,'+ object.x +','+ object.y + ',1)',
+		'transition-duration':'6s',
+		'transform':'translate3d(-'+landingPosition+'px, 0px, 0px)'
+	});
+  
+  setTimeout(function(){
+		$wheel.css({
+			'transition-timing-function':'',
+			'transition-duration':'',
+		});
+    
+    var resetTo = -(position * card + randomize);
+		$wheel.css('transform', 'translate3d('+resetTo+'px, 0px, 0px)');
+  }, 6 * 1000);
+};
+
+var timeleft = 15;
+var downloadTimer = setInterval(function(){
+  if(timeleft <= -1){
+    startInterval(downloadTimer);
+    document.getElementById("tim").innerHTML = timeleft;
+  } else {
+    document.getElementById("tim").innerHTML = timeleft;
+
+ };
+  if (timeleft <= 0) {
+ rot(this,rot)
+ timeleft = 20;
+
+  }
+  timeleft -= 1;
+}, 1000);
+
+var rty = document.getElementById("card red")
+var bty = document.getElementById("card black")
+var gty = document.getElementById("card green")
+function betr(){
+console.log("Win")
+};
+function betb(){
+	
+};
+function betrg(){
+	
+};
+
+
+
+
+
+</script>
+
+
+</body>
+</html>
